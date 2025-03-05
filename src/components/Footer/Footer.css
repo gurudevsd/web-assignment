@@ -1,0 +1,17 @@
+footer {
+    background-color: rgb(9, 9, 9);
+    margin-top: 50px;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+footer p {
+    background: #000;
+    font-size: 21px;
+    font-family: fantasy;
+}
+
+span {
+    color: red;
+}
