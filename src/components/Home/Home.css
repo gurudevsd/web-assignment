@@ -23,9 +23,7 @@ body {
   margin: 20px;
   overflow: hidden;
   width: calc(100% / 3 - 20px);
-  /* 3 cards per row */
   max-width: 300px;
-  /* Optional: max width for larger screens */
   transition: transform 0.2s;
   height: fit-content;
 }
@@ -51,14 +49,12 @@ img {
 .box {
   padding: 10px;
   text-align: center;
-  /* Center text */
 }
 
 h3 {
   font-size: 1.2em;
   margin: 0;
   color: white;
-  /* Ensure text color is visible */
 }
 
 h4 {
@@ -115,14 +111,14 @@ h4 {
 @media (max-width: 768px) {
   .card {
     width: calc(100% / 2 - 20px);
-    /* 2 cards per row on tablets */
+ 
   }
 }
 
 @media (max-width: 480px) {
   .card {
     width: 100%;
-    /* 1 card per row on mobile */
+    
   }
 }
 

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link, redirect } from 'react-router-dom';
 import axios from 'axios';
-
+import './SearchResult.css'
 
 
 const API_KEY = 'c45a857c193f6302f2b5061c3b85e743';
@@ -41,14 +41,14 @@ const SearchResult = () => {
           movies.map((movie) => (
 
             <div key={movie.id} className="card1">
-              <Link to={`/movie/${movie.id}`} className='home-link1'>
+              <Link to={`/movie/${movie.id}`} className='home-link1'style={{ textDecoration: 'none' }}>
                 {movie.poster_path ? (
                   <img
                     src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
                     alt={movie.title}
                   />
                 ) : (
-                  <div style={{ textDecoration: 'none', color: 'inherit' }}>No Image Available f</div>
+                  <div style={{ textDecoration: 'none', color: 'inherit' }}>No Image Available</div>
                 )}
 
                 <div style={{}} className='box1'>

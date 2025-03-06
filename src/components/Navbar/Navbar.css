@@ -90,11 +90,10 @@ i {
 
   input[type="text"] {
     width: calc(100% - 60px);
-    /* Adjust width for button */
+    
   }
 
   button {
     width: 50px;
-    /* Fixed width for button */
   }
 }
