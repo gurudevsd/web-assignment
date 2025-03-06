@@ -148,7 +148,6 @@ h3 {
   }
 
   .movie-details {
-    display: inline-block;
     width: 100%;
     height: auto;
   }
@@ -157,7 +156,7 @@ h3 {
 
     width: 200px;
     height: 300px;
-    margin-left: 255px;
+
 
   }
 
@@ -173,26 +172,28 @@ h3 {
 
 
   @media screen and (max-width: 480px) {
-    .container1 {
-      display: inline-block;
 
-    }
 
     .movie-details {
+
       display: inline-block;
       width: 100%;
       height: auto;
+      align-self: center;
     }
 
     .poster {
-
-      width: 200px;
-      height: 300px;
-      margin-left: 120px;
-
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: auto;
+      margin: 0px;
     }
 
     .poster img {
+      height: auto;
+      width: 200px;
       border-radius: 10px;
 
     }
@@ -202,4 +203,5 @@ h3 {
     }
 
 
-  }}
+  }
+}

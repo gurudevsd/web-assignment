@@ -1,29 +1,43 @@
-import { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
-import './Upcoming.css'
+import React, { useEffect, useState } from 'react';
+import './Upcoming.css';
+import { Link } from 'react-router-dom';
+import ReactPaginate from 'react-paginate';
 
 const Upcoming = () => {
-
-  const [movie, setMovie] = useState([])
-
-  const getMovie = () => {
-    fetch(' https://api.themoviedb.org/3/movie/upcoming?api_key=c45a857c193f6302f2b5061c3b85e743&language=en-US&page=1')
-      .then(res => res.json())
-      .then(json => setMovie(json.results))
-  }
+  const [movie, setMovies] = useState([]);
+  const [pageCount, setPageCount] = useState(0);
+  const [currentPage, setCurrentPage] = useState(0);
+  const itemsPerPage = 10;
+  const fetchMovies = async (page) => {
+    try {
+      const res = await fetch(
+        `https://api.themoviedb.org/3/movie/upcoming?api_key=c45a857c193f6302f2b5061c3b85e743&language=en-US&page=${page + 1}`
+      );
+      const data = await res.json();
+      setMovies(data.results);
+      setPageCount(Math.ceil(data.total_results / itemsPerPage));
+    } catch (error) {
+      console.error('Error fetching movies:', error);
+    }
+  };
 
   useEffect(() => {
-    getMovie()
-  }, [])
+    fetchMovies(currentPage);
+  }, [currentPage]);
 
-  console.log(movie);
+  const handlePageClick = (data) => {
+    setCurrentPage(data.selected);
+  };
+
+
   return (
-    <div>
-      <h1 className='page'>Upcoming Movies</h1>
+    <div className='body'>
+      <h1 className='page1'>Upcoming</h1>
       <div className='container'>
+
         {movie.map((movie, idx) => {
           return <div className='card' key={idx} >
-            <Link to={`/movie/${movie.id}`}>
+            <Link to={`/movie/${movie.id}`} className='home-link'>
               <img src={' https://image.tmdb.org/t/p/w500' + movie.poster_path} alt={movie.title} />
               <div className='box'>
                 <h3>{movie.title}</h3>
@@ -32,10 +46,22 @@ const Upcoming = () => {
             </Link>
           </div>
 
+
         })}
       </div>
+      <ReactPaginate
+        previousLabel={'Previous'}
+        nextLabel={'Next'}
+        breakLabel={'...'}
+        breakClassName={'break-me'}
+        pageCount={pageCount}
+        marginPagesDisplayed={0}
+        pageRangeDisplayed={5}
+        onPageChange={handlePageClick}
+        containerClassName={'pagination'}
+        activeClassName={'active'}
+      />
     </div>
-
   )
 }
 

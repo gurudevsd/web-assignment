@@ -1,12 +1,21 @@
-# React + Vite
+MovieFlix 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Movie Flix is a responsive web application built with React.js that allows users to explore popular, top-rated, and upcoming movies. Users can also search for specific movies and view detailed information about each title, including the cast. The application leverages The Movie Database (TMDb) API to fetch and display movie data.
 
-Currently, two official plugins are available:
+Features 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Home Page / Popular Movies: Displays a list of popular movies fetched from TMDb. 
+Top Rated Movies: Showcases movies with the highest ratings. 
+Upcoming Movies: Lists movies that are scheduled for release in the near future. Single 
+Movie Detail.
+Page: Provides comprehensive details about a selected movie, including its cast. Search Functionality: Allows users to search for movies by title.
+Global Navbar: Includes navigation links to different pages and a global search bar. 
+Responsive Design: Ensures optimal viewing experience across various devices. 
+Pagination: Implements pagination to navigate through extensive lists of movies.
 
-## Expanding the ESLint configuration
+Technologies Used 
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+React.js: JavaScript library for building user interfaces. 
+React Router: Library for routing and navigation within the application. 
+TMDb API: Provides movie data, including details, ratings, and images. 
+CSS: For styling and ensuring responsive design.

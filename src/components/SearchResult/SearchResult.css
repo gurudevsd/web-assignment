@@ -1,128 +1,88 @@
-.h2s {
-    color: white;
-    margin: 10px;
+body {
+  background-color: #181818;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+
 }
 
 .container2 {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin: 0px 60px 0 60px;
-
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0 10px;
 }
 
 .card1 {
-    margin: 70px 34px 90px 34px;
-    height: 400px;
-    width: 20%;
-    position: relative;
+  border: 0.5px solid #1a1010;
+  border-radius: 10px;
+  margin: 20px;
+  overflow: hidden;
+  width: calc(100% / 3 - 20px);
+  max-width: 300px;
+  transition: transform 0.2s;
+  height: fit-content;
 
 }
 
 .card1:hover {
-    box-shadow: 9px 9px 18px red;
-    padding: 0px;
+  box-shadow: 5px 5px 35px red;
+  transform: scale(1.05);
 }
 
-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.home-link {
+  text-decoration: none;
+  color: inherit;
+  background: #c31313;
+
+}
+
+
+.card1 img {
+  width: 100%;
+  height: auto;
 }
 
 .box1 {
-    text-align: center;
-    color: white;
-
+  padding: 10px;
+  text-align: center;
 }
 
+
 h3 {
-    font-family: Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu, sans-serif;
-    font-weight: bold;
-    font-size: 21px;
-    margin-top: 4px;
-    margin-bottom: 10px;
+  font-size: 1.2em;
+  margin: 0;
+  color: white;
+
 }
 
 p {
-    font-size: 18px;
+  font-size: 1em;
+  color: #f1eded;
 }
 
-@media screen and (max-width: 790px) {
 
 
-    .h2s {
-        color: white;
-
-    }
-
-    .container2 {
-        width: 100%;
-
-    }
-
-    .card1 {
-        margin-top: 50px;
-        height: 300px;
-        flex-wrap: wrap;
-
-    }
-
-
-    img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-
-    .box1 {
-        margin: auto;
-
-    }
-
-    h3 {
-        font-size: 18px;
-    }
-
-    p {
-        font-size: 14px;
-    }
+.h2s {
+  text-align: center;
+  margin: 20px 0;
+}
 
 
 
+
+@media screen and (max-width: 768px) {
+  .card1 {
+    width: 150px;
+  }
 }
 
 @media screen and (max-width: 480px) {
-    .h2s {
-        margin-top: 40px;
-        float: left;
-    }
+  .card1 {
+    width: 100%;
+    margin: 10px 0;
+  }
 
-
-    .container2 {
-        width: 100%;
-    }
-
-    .card1 {
-        margin-top: 50px;
-        height: 400px;
-        width: 55%;
-        flex-wrap: wrap;
-
-    }
-
-    img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-
-    h3 {
-        font-size: 18px;
-    }
-
-    p {
-        font-size: 14px;
-    }
-
+  .no-image {
+    height: 200px;
+  }
 }
